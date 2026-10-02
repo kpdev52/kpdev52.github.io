@@ -63,3 +63,18 @@
   font-size: 1.02rem;
   color: var(--text);
 }
+
+@media (max-width: 560px) {
+  .marquee {
+    padding-block: 12px;
+    margin-bottom: 30px;
+  }
+
+  .track {
+    gap: 26px;
+  }
+
+  .group {
+    padding: 18px;
+  }
+}

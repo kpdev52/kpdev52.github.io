@@ -41,6 +41,9 @@ export function Hero() {
             </div>
           )}
           <span className={styles.avatarRing} aria-hidden="true" />
+          <span className={styles.orbit} aria-hidden="true">
+            <i />
+          </span>
           <span className={styles.tap} aria-hidden="true">tap</span>
         </button>
 

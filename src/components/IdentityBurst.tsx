@@ -91,8 +91,9 @@ export function IdentityBurst({ open, onClose }: Props) {
               key={label.accent}
               className={styles.pill}
               style={{
-                left: `${pos.x}%`,
-                top: `${pos.y}%`,
+                /* --scale shrinks the ring on small screens, see the module CSS */
+                left: `calc(50% + ${(pos.x - 50).toFixed(2)}% * var(--scale))`,
+                top: `calc(50% + ${(pos.y - 50).toFixed(2)}% * var(--scale))`,
                 ["--i" as string]: index,
               }}
             >

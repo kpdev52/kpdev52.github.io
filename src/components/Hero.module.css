@@ -126,22 +126,36 @@
 
 .avatarRing {
   position: absolute;
-  inset: -9px;
+  inset: -11px;
   border-radius: 50%;
   border: 1px dashed var(--line-2);
-  opacity: 0.8;
-  animation: pulse 4.5s var(--ease) infinite;
+  opacity: 0.75;
+  animation: spin 40s linear infinite;
 }
 
-@keyframes pulse {
-  0%,
-  100% {
-    transform: scale(1);
-    opacity: 0.55;
-  }
-  50% {
-    transform: scale(1.045);
-    opacity: 0.22;
+/* a dot travelling around the ring, like a satellite */
+.orbit {
+  position: absolute;
+  inset: -11px;
+  border-radius: 50%;
+  animation: spin 7.5s linear infinite;
+}
+
+.orbit i {
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  margin-left: -4px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 10px 2px var(--accent);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
 }
 
@@ -245,9 +259,42 @@
 }
 
 @media (max-width: 600px) {
+  .hero {
+    min-height: auto;
+    padding-block: 104px 72px;
+  }
+
   .avatarWrap {
     width: 104px;
     height: 104px;
+    margin-bottom: 30px;
+  }
+
+  .eyebrow {
+    gap: 6px;
+    font-size: 0.78rem;
+    margin-bottom: 18px;
+  }
+
+  .eyebrow i {
+    margin-inline: 6px;
+  }
+
+  .title {
+    max-width: 100%;
+  }
+
+  .lede {
+    font-size: 0.97rem;
+  }
+
+  .ctaRow {
+    width: 100%;
+  }
+
+  .ctaRow a {
+    flex: 1 1 auto;
+    justify-content: center;
   }
 
   .scrollHint {

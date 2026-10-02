@@ -14,6 +14,7 @@ html {
 
 body {
   margin: 0;
+  min-width: 320px;
   background: var(--bg);
   color: var(--text);
   font-family: var(--font);
@@ -78,12 +79,12 @@ ul {
   width: 100%;
   max-width: var(--container);
   margin-inline: auto;
-  padding-inline: 24px;
+  padding-inline: clamp(18px, 4vw, 24px);
 }
 
 .section {
   position: relative;
-  padding-block: clamp(72px, 10vw, 128px);
+  padding-block: clamp(56px, 9vw, 128px);
 }
 
 .section-head {
@@ -92,14 +93,15 @@ ul {
 }
 
 .section-head h2 {
-  font-size: clamp(1.9rem, 4.2vw, 3rem);
-  margin-block: 14px 0;
+  font-size: clamp(1.6rem, 5.4vw, 3rem);
+  margin-block: 12px 0;
+  text-wrap: balance;
 }
 
 .section-head .sub {
   color: var(--text-2);
   margin-top: 14px;
-  font-size: 1.05rem;
+  font-size: clamp(0.95rem, 2.4vw, 1.05rem);
 }
 
 .kicker {
@@ -179,6 +181,8 @@ ul {
 }
 
 .chips li {
+  max-width: 100%;
+  overflow-wrap: anywhere;
   font-size: 0.78rem;
   font-weight: 500;
   color: var(--text-2);
@@ -234,5 +238,26 @@ ul {
   [data-reveal] {
     opacity: 1;
     transform: none;
+  }
+}
+
+/* ---------- small screens ---------- */
+
+@media (max-width: 560px) {
+  body {
+    font-size: 15.5px;
+  }
+
+  .btn {
+    padding: 11px 18px;
+    font-size: 0.9rem;
+  }
+
+  .card {
+    border-radius: var(--radius-sm);
+  }
+
+  .section-head {
+    margin-bottom: 26px;
   }
 }

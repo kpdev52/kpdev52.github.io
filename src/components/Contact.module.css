@@ -22,3 +22,16 @@
   justify-content: center;
   gap: 12px;
 }
+
+@media (max-width: 560px) {
+  .row {
+    margin-top: 26px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .row a {
+    justify-content: center;
+    overflow-wrap: anywhere;
+  }
+}

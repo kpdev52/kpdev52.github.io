@@ -38,6 +38,7 @@
 }
 
 .stage {
+  --scale: 1;
   position: relative;
   width: min(92vw, 78vh, 760px);
   aspect-ratio: 1;
@@ -51,6 +52,8 @@
   width: 100%;
   height: 100%;
   overflow: visible;
+  transform: scale(var(--scale));
+  transform-origin: 50% 50%;
 }
 
 .lines line {
@@ -181,18 +184,81 @@
   margin-top: 4px;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 860px) {
   .stage {
-    width: min(94vw, 94vh);
+    --scale: 0.86;
+    width: min(94vw, 84vh);
   }
 
   .pill {
-    font-size: 0.74rem;
-    padding: 7px 12px;
+    font-size: 0.78rem;
+    padding: 8px 13px;
+  }
+}
+
+/* On phones the ring stops being readable, so the burst becomes a stack:
+   portrait, name, then the labels flowing as chips. */
+@media (max-width: 600px) {
+  .stage {
+    width: min(92vw, 420px);
+    aspect-ratio: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    gap: 10px;
+    padding-block: 20px;
   }
 
+  .lines {
+    display: none;
+  }
+
+  .photoWrap,
+  .identity {
+    position: static;
+    transform: none;
+  }
+
+  /* square stays square: no flex-basis on the photo, only on the name block */
   .photoWrap {
-    width: 42%;
+    flex: 0 0 auto;
+    width: 168px;
+    height: 168px;
+    order: 1;
+  }
+
+  .identity {
+    flex: 0 0 100%;
+    width: auto;
+  }
+
+  .burst[data-open] .photoWrap {
+    transform: none;
+  }
+
+  .identity {
+    order: 2;
+    margin-bottom: 10px;
+  }
+
+  .pill {
+    position: static;
+    order: 3;
+    transform: translateY(6px);
+    font-size: 0.78rem;
+    padding: 8px 13px;
+  }
+
+  .burst[data-open] .pill {
+    transform: none;
+  }
+
+  .close {
+    top: 16px;
+    right: 16px;
+    width: 38px;
+    height: 38px;
   }
 }
 
