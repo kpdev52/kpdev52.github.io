@@ -1,0 +1,48 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 20px;
+}
+
+.pillar {
+  padding: 30px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pillar:hover {
+  border-color: var(--line-2);
+  transform: translateY(-3px);
+  background: var(--card-hover);
+}
+
+.pillar h3 {
+  font-size: 1.22rem;
+}
+
+.pillar p {
+  color: var(--text-2);
+  font-size: 0.96rem;
+}
+
+.pillar ul {
+  margin-top: auto;
+  padding-top: 6px;
+}
+
+.icon {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  border: 1px solid var(--accent-line);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.icon svg {
+  width: 24px;
+  height: 24px;
+}

@@ -1,0 +1,81 @@
+/* Design tokens — deep slate + electric cyan.
+   Dark is the default; [data-theme="light"] overrides on <html>. */
+
+:root {
+  color-scheme: dark;
+
+  /* surfaces */
+  --bg: #0b0f14;
+  --bg-2: #0e141b;
+  --bg-3: #121820;
+  --card: #121820;
+  --card-hover: #161e28;
+
+  /* lines */
+  --line: rgba(230, 237, 245, 0.09);
+  --line-2: rgba(230, 237, 245, 0.16);
+
+  /* text */
+  --text: #e6edf5;
+  --text-2: #8a97a6;
+  --text-3: #5d6977;
+
+  /* accent */
+  --accent: #22d3ee;
+  --accent-2: #7dd3fc;
+  --accent-ink: #04141a;
+  --accent-soft: rgba(34, 211, 238, 0.1);
+  --accent-line: rgba(34, 211, 238, 0.5);
+  --grad: linear-gradient(96deg, #22d3ee 0%, #7dd3fc 55%, #a5b4fc 100%);
+
+  /* effects */
+  --surface: rgba(230, 237, 245, 0.04);
+  --surface-2: rgba(230, 237, 245, 0.08);
+  --glass: rgba(11, 15, 20, 0.72);
+  --shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.3);
+  --glow: radial-gradient(60% 60% at 50% 0%, rgba(34, 211, 238, 0.14), transparent 70%);
+
+  /* type */
+  --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+
+  /* geometry + motion */
+  --radius: 22px;
+  --radius-sm: 14px;
+  --radius-pill: 999px;
+  --container: 1120px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur: 0.6s;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --bg: #f7f9fc;
+  --bg-2: #eef3f9;
+  --bg-3: #e6edf6;
+  --card: #ffffff;
+  --card-hover: #ffffff;
+
+  --line: rgba(12, 32, 51, 0.12);
+  --line-2: rgba(12, 32, 51, 0.22);
+
+  --text: #0d1a26;
+  --text-2: #4a5b6b;
+  --text-3: #74828f;
+
+  --accent: #0e7490;
+  --accent-2: #0891b2;
+  --accent-ink: #ffffff;
+  --accent-soft: rgba(14, 116, 144, 0.08);
+  --accent-line: rgba(14, 116, 144, 0.4);
+  --grad: linear-gradient(96deg, #0e7490 0%, #0891b2 55%, #4f46e5 100%);
+
+  --surface: rgba(13, 26, 38, 0.03);
+  --surface-2: rgba(13, 26, 38, 0.06);
+  --glass: rgba(247, 249, 252, 0.78);
+  --shadow: 0 20px 48px rgba(15, 31, 61, 0.1);
+  --shadow-soft: 0 8px 24px rgba(15, 31, 61, 0.07);
+  --glow: radial-gradient(60% 60% at 50% 0%, rgba(14, 116, 144, 0.1), transparent 70%);
+}

@@ -1,0 +1,189 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.project {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: 32px;
+  padding: 26px;
+  align-items: center;
+}
+
+.project:hover {
+  border-color: var(--line-2);
+}
+
+.flip .media {
+  order: 2;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-block: 6px;
+}
+
+.body h3 {
+  font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tagline {
+  color: var(--text);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.14rem;
+  line-height: 1.4;
+}
+
+.description {
+  color: var(--text-2);
+  font-size: 0.95rem;
+}
+
+.links {
+  margin-top: 4px;
+}
+
+/* ---------- media frame ---------- */
+
+.frame {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--bg-2);
+  box-shadow: var(--shadow);
+}
+
+.frameBar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+
+.frameBar span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--line-2);
+}
+
+.frameBar i {
+  margin-left: 12px;
+  font-style: normal;
+  font-size: 0.74rem;
+  color: var(--text-3);
+  letter-spacing: 0.02em;
+}
+
+.frame img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+/* placeholder: a quiet wireframe, not a broken image */
+
+.skeleton {
+  display: grid;
+  grid-template-columns: 54px 1fr;
+  gap: 12px;
+  padding: 14px;
+  aspect-ratio: 16 / 10;
+  background: linear-gradient(180deg, var(--bg-3), var(--bg-2));
+}
+
+.skelSide,
+.skelMain,
+.skelRow,
+.skelCards,
+.skelLines {
+  display: flex;
+  gap: 8px;
+}
+
+.skelSide {
+  flex-direction: column;
+}
+
+.skelSide span {
+  height: 9px;
+  border-radius: 4px;
+  background: var(--surface-2);
+}
+
+.skelSide span:first-child {
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-line);
+}
+
+.skelMain {
+  flex-direction: column;
+  gap: 12px;
+}
+
+.skelRow span {
+  height: 11px;
+  border-radius: 5px;
+  background: var(--surface-2);
+}
+
+.skelRow span:first-child {
+  width: 38%;
+}
+
+.skelRow span:last-child {
+  width: 18%;
+  background: var(--accent-soft);
+}
+
+.skelCards span {
+  flex: 1;
+  height: 52px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.skelLines {
+  flex-direction: column;
+  gap: 7px;
+}
+
+.skelLines span {
+  height: 8px;
+  border-radius: 4px;
+  background: var(--surface-2);
+}
+
+.skelLines span:nth-child(2) {
+  width: 82%;
+}
+
+.skelLines span:nth-child(3) {
+  width: 64%;
+}
+
+@media (max-width: 900px) {
+  .project {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 18px;
+  }
+
+  .flip .media {
+    order: 0;
+  }
+}
