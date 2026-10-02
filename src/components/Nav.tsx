@@ -13,17 +13,57 @@ const SECTION_IDS = navLinks.map((link) => link.id);
 
 export function Nav({ theme, onToggleTheme }: NavProps) {
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const active = useActiveSection(SECTION_IDS);
 
+  /* Slide the header away when scrolling down, bring it back on the way up.
+     Lenis emits many tiny scroll steps, so track a sustained direction change
+     rather than reacting to a single delta. */
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    let lastY = window.scrollY;
+    let anchorY = lastY;
+    let direction = 0;
+
+    const onScroll = () => {
+      const y = window.scrollY;
+      setScrolled(y > 24);
+
+      if (y <= 160) {
+        setHidden(false);
+        direction = 0;
+        anchorY = y;
+        lastY = y;
+        return;
+      }
+
+      const delta = y - lastY;
+
+      // anchor where the reversal began, so one big jump still counts
+      if (delta > 0 && direction <= 0) {
+        direction = 1;
+        anchorY = lastY;
+      } else if (delta < 0 && direction >= 0) {
+        direction = -1;
+        anchorY = lastY;
+      }
+
+      if (direction > 0 && y - anchorY > 24) setHidden(true);
+      if (direction < 0 && anchorY - y > 24) setHidden(false);
+
+      lastY = y;
+    };
+
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
-    <header className={`${styles.nav} ${scrolled ? styles.scrolled : ""}`}>
+    <header
+      className={`${styles.nav} ${scrolled ? styles.scrolled : ""} ${
+        hidden ? styles.hidden : ""
+      }`}
+    >
       <div className={styles.inner}>
         <a href="#top" className={styles.brand} aria-label="Back to top">
           <span className={styles.mark}>{profile.initials}</span>
