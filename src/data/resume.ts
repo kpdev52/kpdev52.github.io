@@ -93,6 +93,9 @@ export const projects: Project[] = [
     badges: ["End to end", "Personal project"],
     stack: [".NET 6", "C#", "LINQ", "SQL Server", "Angular", "JWT", "Swagger"],
     frameLabel: "bookstore · localhost",
+    image: "assets/bookstore.svg",
+    imageAlt:
+      "Online Bookstore interface: catalogue grid with search and category filters, and a cart drawer showing a JWT-authenticated session",
   },
   {
     id: "realtime-spa",

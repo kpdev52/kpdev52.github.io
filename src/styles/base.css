@@ -8,7 +8,8 @@
 
 html {
   -webkit-text-size-adjust: 100%;
-  scroll-behavior: smooth;
+  /* No scroll-behavior here: Lenis drives scrolling and the two fight.
+     Reduced-motion users get native instant anchor jumps, which is correct. */
 }
 
 body {

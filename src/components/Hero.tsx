@@ -10,7 +10,11 @@ export function Hero() {
 
   return (
     <section className={styles.hero} id="top" ref={ref}>
-      <div className={styles.glow} aria-hidden="true" />
+      <div className={styles.backdrop} aria-hidden="true">
+        <div className={styles.streaks} />
+        <div className={styles.glow} />
+        <div className={styles.veil} />
+      </div>
       <div className={`container ${styles.content}`}>
         <div className={styles.avatarWrap} data-hero>
           {hasPhoto ? (

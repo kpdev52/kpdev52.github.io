@@ -32,7 +32,28 @@ export function useSmoothScroll() {
     gsap.ticker.add(tick);
     gsap.ticker.lagSmoothing(0);
 
+    /* Lenis owns the scroll position, so native anchor jumps do nothing.
+       Route in-page links through it instead. */
+    const onAnchorClick = (event: MouseEvent) => {
+      const link = (event.target as HTMLElement | null)?.closest?.(
+        'a[href^="#"]',
+      ) as HTMLAnchorElement | null;
+
+      const hash = link?.getAttribute("href");
+      if (!hash || hash === "#") return;
+
+      const target = document.querySelector(hash);
+      if (!target) return;
+
+      event.preventDefault();
+      lenis.scrollTo(target as HTMLElement, { offset: -72 });
+      history.replaceState(null, "", hash);
+    };
+
+    document.addEventListener("click", onAnchorClick);
+
     return () => {
+      document.removeEventListener("click", onAnchorClick);
       gsap.ticker.remove(tick);
       lenis.destroy();
     };
