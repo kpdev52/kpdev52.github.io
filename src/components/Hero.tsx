@@ -1,11 +1,13 @@
 import { useRef, useState } from "react";
 import { eyebrow, profile } from "../data/resume";
 import { useHeroIntro } from "../hooks/useMotion";
+import { IdentityBurst } from "./IdentityBurst";
 import styles from "./Hero.module.css";
 
 export function Hero() {
   const ref = useRef<HTMLElement>(null);
   const [hasPhoto, setHasPhoto] = useState(true);
+  const [burstOpen, setBurstOpen] = useState(false);
   useHeroIntro(ref);
 
   return (
@@ -16,7 +18,13 @@ export function Hero() {
         <div className={styles.veil} />
       </div>
       <div className={`container ${styles.content}`}>
-        <div className={styles.avatarWrap} data-hero>
+        <button
+          type="button"
+          className={styles.avatarWrap}
+          data-hero
+          onClick={() => setBurstOpen(true)}
+          aria-label="Open profile highlights"
+        >
           {hasPhoto ? (
             <img
               className={styles.avatar}
@@ -33,7 +41,8 @@ export function Hero() {
             </div>
           )}
           <span className={styles.avatarRing} aria-hidden="true" />
-        </div>
+          <span className={styles.tap} aria-hidden="true">tap</span>
+        </button>
 
         <p className={styles.eyebrow} data-hero>
           {eyebrow.map((item, index) => (
@@ -83,6 +92,8 @@ export function Hero() {
       <div className={styles.scrollHint} aria-hidden="true">
         <span />
       </div>
+
+      <IdentityBurst open={burstOpen} onClose={() => setBurstOpen(false)} />
     </section>
   );
 }

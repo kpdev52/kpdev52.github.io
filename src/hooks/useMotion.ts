@@ -130,6 +130,35 @@ export function useHeroIntro(ref: React.RefObject<HTMLElement | null>) {
   }, [ref]);
 }
 
+/** Fills the experience timeline's gradient line as the section scrolls past. */
+export function useTimelineProgress(
+  track: React.RefObject<HTMLElement | null>,
+  fill: React.RefObject<HTMLElement | null>,
+) {
+  useEffect(() => {
+    const trackEl = track.current;
+    const fillEl = fill.current;
+    if (!trackEl || !fillEl) return;
+
+    if (prefersReducedMotion()) {
+      fillEl.style.transform = "scaleY(1)";
+      return;
+    }
+
+    const trigger = ScrollTrigger.create({
+      trigger: trackEl,
+      start: "top 72%",
+      end: "bottom 65%",
+      scrub: 0.6,
+      onUpdate: (self) => {
+        fillEl.style.transform = `scaleY(${self.progress})`;
+      },
+    });
+
+    return () => trigger.kill();
+  }, [track, fill]);
+}
+
 /** Scroll progress 0 → 1 for the top bar. */
 export function useScrollProgress() {
   const [progress, setProgress] = useState(0);

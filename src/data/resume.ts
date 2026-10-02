@@ -55,6 +55,19 @@ export const eyebrow = [
   { label: "AI learner", caption: "Agentic AI · RAG · Vector DBs", gradient: true },
 ];
 
+/* Labels that fan out around the photo when the hero avatar is tapped.
+   `accent` is the gradient-coloured word. */
+export const burstLabels = [
+  { lead: "", accent: "Engineer" },
+  { lead: "Angular &", accent: "TypeScript" },
+  { lead: "APIs &", accent: "authentication" },
+  { lead: "Data &", accent: "performance" },
+  { lead: "Cloud &", accent: "deployment" },
+  { lead: "RAG & ", accent: "agentic AI" },
+  { lead: "Real-time", accent: "systems" },
+  { lead: "System", accent: "ownership" },
+];
+
 export const pillars = [
   {
     id: "frontend",
@@ -143,6 +156,7 @@ export const jobs: Job[] = [
     role: "Angular Developer",
     period: "Sep 2023 — Aug 2025",
     location: "Surat, India",
+    logo: "assets/keypress.jpg",
     points: [
       "Developed and maintained dynamic single-page applications for casino-based platforms using Angular, JavaScript and TypeScript.",
       "Implemented WebSocket-based real-time communication for live data updates and improved interactivity.",
@@ -156,6 +170,7 @@ export const jobs: Job[] = [
     role: "Junior Software Developer",
     period: "May 2022 — Apr 2023",
     location: "Surat, India",
+    logo: "assets/actoscript.jpg",
     points: [
       "Developed responsive web applications using HTML, CSS, Bootstrap and JavaScript.",
       "Translated UI/UX designs into clean, maintainable front-end code.",

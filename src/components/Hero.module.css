@@ -73,7 +73,32 @@
   position: relative;
   width: 132px;
   height: 132px;
-  margin-bottom: 26px;
+  margin-bottom: 36px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  transition: transform 0.35s var(--ease);
+}
+
+.avatarWrap:hover {
+  transform: translateY(-3px);
+}
+
+.tap {
+  position: absolute;
+  left: 50%;
+  bottom: -22px;
+  transform: translateX(-50%);
+  font-size: 0.62rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  transition: color 0.25s var(--ease);
+}
+
+.avatarWrap:hover .tap {
+  color: var(--accent);
 }
 
 .avatar {
