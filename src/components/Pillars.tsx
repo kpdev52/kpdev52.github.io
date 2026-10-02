@@ -32,6 +32,12 @@ const icons: Record<string, ReactNode> = {
       <path d="M18 13h12M18 35h12M12 18v12M36 18v12" />
     </svg>
   ),
+  cloud: (
+    <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M15 33a8 8 0 0 1-1-15.9 11 11 0 0 1 20.9-2.6A8.5 8.5 0 0 1 34 33H15z" />
+      <path d="M24 40V26M19 31l5-5 5 5" />
+    </svg>
+  ),
   ai: (
     <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <circle cx="24" cy="24" r="6" />

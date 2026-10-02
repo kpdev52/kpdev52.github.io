@@ -76,6 +76,12 @@ export const pillars = [
     chips: ["WebSockets", "Real-time sync", "REST contracts", "Caching", "Production debugging"],
   },
   {
+    id: "cloud",
+    title: "Cloud & deployment",
+    body: "Getting the build onto a server and keeping it reachable. Node and Angular applications deployed on EC2 behind Nginx as a reverse proxy with TLS, static assets and uploads served from S3, and IAM users, roles and policies scoped to least privilege instead of one all-powerful key.",
+    chips: ["AWS", "EC2", "S3", "IAM", "Nginx", "Reverse proxy", "TLS"],
+  },
+  {
     id: "ai",
     title: "Agentic AI",
     body: "The area I am actively going deeper into: the engineering behind agentic systems rather than demos. RAG pipelines that ground model output in real application data through a vector database, tool and prompt design that keeps an agent inside its lane, and a human approval step in front of anything that writes.",
@@ -221,6 +227,19 @@ export const skillGroups = [
     ],
   },
   {
+    id: "cloud",
+    title: "Cloud & deployment",
+    items: [
+      "AWS EC2",
+      "Amazon S3",
+      "AWS IAM",
+      "Nginx",
+      "Reverse proxy",
+      "TLS / HTTPS",
+      "Linux server setup",
+    ],
+  },
+  {
     id: "ai",
     title: "AI engineering",
     items: [
@@ -263,6 +282,11 @@ export const marquee = [
   "JWT",
   "WebSockets",
   "Swagger",
+  "AWS",
+  "EC2",
+  "S3",
+  "IAM",
+  "Nginx",
   "Agentic AI",
   "RAG",
   "Vector DBs",
