@@ -8,9 +8,7 @@ export function Footer() {
         <span>
           © {new Date().getFullYear()} {profile.name}
         </span>
-        <span>
-          {profile.location} · Built with React, Vite and too much coffee
-        </span>
+        <span>{profile.location} · Designed &amp; built by me</span>
       </div>
     </footer>
   );
