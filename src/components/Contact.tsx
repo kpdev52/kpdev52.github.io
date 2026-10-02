@@ -14,8 +14,8 @@ export function Contact() {
           <span className="grad">building properly?</span>
         </h2>
         <p className={styles.sub} data-reveal>
-          Open to full stack and Angular roles — {profile.location}, hybrid or
-          remote. Fastest reply is email or WhatsApp.
+          Open to software engineering and Angular roles — {profile.location},
+          hybrid or remote. Fastest reply is email or WhatsApp.
         </p>
 
         <div className={styles.row} data-reveal>

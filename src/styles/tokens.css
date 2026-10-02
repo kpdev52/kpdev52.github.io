@@ -1,48 +1,58 @@
-/* Design tokens — deep slate + electric cyan.
+/* Design tokens.
    Dark is the default; [data-theme="light"] overrides on <html>. */
 
 :root {
   color-scheme: dark;
 
   /* surfaces */
-  --bg: #0b0f14;
-  --bg-2: #0e141b;
-  --bg-3: #121820;
-  --card: #121820;
-  --card-hover: #161e28;
+  --bg: #000000;
+  --bg-2: #0a0a0c;
+  --bg-3: #131316;
+  --card: #151518;
+  --card-hover: #1b1b1f;
 
   /* lines */
-  --line: rgba(230, 237, 245, 0.09);
-  --line-2: rgba(230, 237, 245, 0.16);
+  --line: rgba(255, 255, 255, 0.08);
+  --line-2: rgba(255, 255, 255, 0.16);
 
   /* text */
-  --text: #e6edf5;
-  --text-2: #8a97a6;
-  --text-3: #5d6977;
+  --text: #f5f5f7;
+  --text-2: #a1a1a6;
+  --text-3: #6e6e73;
 
-  /* accent */
-  --accent: #22d3ee;
-  --accent-2: #7dd3fc;
-  --accent-ink: #04141a;
-  --accent-soft: rgba(34, 211, 238, 0.1);
-  --accent-line: rgba(34, 211, 238, 0.5);
-  --grad: linear-gradient(96deg, #22d3ee 0%, #7dd3fc 55%, #a5b4fc 100%);
+  /* accent — warm to cool, used as a gradient more often than flat */
+  --accent: #7cd8ff;
+  --accent-2: #ff7ac6;
+  --accent-3: #ffb86b;
+  --accent-soft: rgba(124, 216, 255, 0.1);
+  --accent-line: rgba(124, 216, 255, 0.45);
+  --grad: linear-gradient(92deg, #ffb86b 0%, #ff7ac6 45%, #7cd8ff 100%);
+
+  /* solid buttons invert against the page */
+  --btn-bg: #f5f5f7;
+  --btn-ink: #000000;
 
   /* effects */
-  --surface: rgba(230, 237, 245, 0.04);
-  --surface-2: rgba(230, 237, 245, 0.08);
-  --glass: rgba(11, 15, 20, 0.72);
-  --shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
-  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.3);
-  --glow: radial-gradient(60% 60% at 50% 0%, rgba(34, 211, 238, 0.14), transparent 70%);
+  --surface: rgba(255, 255, 255, 0.04);
+  --surface-2: rgba(255, 255, 255, 0.09);
+  --glass: rgba(0, 0, 0, 0.6);
+  --shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --hero-wash: radial-gradient(
+      70% 50% at 18% 12%,
+      rgba(124, 216, 255, 0.16),
+      transparent 70%
+    ),
+    radial-gradient(60% 50% at 85% 20%, rgba(255, 122, 198, 0.14), transparent 70%),
+    radial-gradient(50% 40% at 60% 85%, rgba(255, 184, 107, 0.1), transparent 70%);
 
   /* type */
   --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --serif: "Instrument Serif", Georgia, "Times New Roman", serif;
 
   /* geometry + motion */
-  --radius: 22px;
-  --radius-sm: 14px;
+  --radius: 24px;
+  --radius-sm: 16px;
   --radius-pill: 999px;
   --container: 1120px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
@@ -52,30 +62,39 @@
 :root[data-theme="light"] {
   color-scheme: light;
 
-  --bg: #f7f9fc;
-  --bg-2: #eef3f9;
-  --bg-3: #e6edf6;
+  --bg: #fbfbfd;
+  --bg-2: #f5f7fc;
+  --bg-3: #eef2f9;
   --card: #ffffff;
   --card-hover: #ffffff;
 
-  --line: rgba(12, 32, 51, 0.12);
-  --line-2: rgba(12, 32, 51, 0.22);
+  --line: rgba(10, 60, 120, 0.14);
+  --line-2: rgba(10, 60, 120, 0.26);
 
-  --text: #0d1a26;
-  --text-2: #4a5b6b;
-  --text-3: #74828f;
+  --text: #10172a;
+  --text-2: #515154;
+  --text-3: #86868b;
 
-  --accent: #0e7490;
-  --accent-2: #0891b2;
-  --accent-ink: #ffffff;
-  --accent-soft: rgba(14, 116, 144, 0.08);
-  --accent-line: rgba(14, 116, 144, 0.4);
-  --grad: linear-gradient(96deg, #0e7490 0%, #0891b2 55%, #4f46e5 100%);
+  --accent: #0a84ff;
+  --accent-2: #ff5fa8;
+  --accent-3: #ff9f45;
+  --accent-soft: rgba(10, 132, 255, 0.08);
+  --accent-line: rgba(10, 132, 255, 0.35);
+  --grad: linear-gradient(92deg, #ff8a3d 0%, #ff4d8d 42%, #8b5cf6 100%);
 
-  --surface: rgba(13, 26, 38, 0.03);
-  --surface-2: rgba(13, 26, 38, 0.06);
-  --glass: rgba(247, 249, 252, 0.78);
+  --btn-bg: #10172a;
+  --btn-ink: #ffffff;
+
+  --surface: rgba(16, 23, 42, 0.04);
+  --surface-2: rgba(16, 23, 42, 0.07);
+  --glass: rgba(251, 251, 253, 0.72);
   --shadow: 0 20px 48px rgba(15, 31, 61, 0.1);
   --shadow-soft: 0 8px 24px rgba(15, 31, 61, 0.07);
-  --glow: radial-gradient(60% 60% at 50% 0%, rgba(14, 116, 144, 0.1), transparent 70%);
+  --hero-wash: linear-gradient(
+      120deg,
+      rgba(160, 205, 255, 0.55) 0%,
+      rgba(235, 240, 255, 0.2) 38%,
+      rgba(255, 214, 232, 0.5) 72%,
+      rgba(255, 229, 205, 0.5) 100%
+    );
 }

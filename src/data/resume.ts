@@ -26,7 +26,7 @@ export type Job = {
 export const profile = {
   name: "Keyur Pumbhadiya",
   initials: "KP",
-  role: "Full Stack Developer",
+  role: "Software Engineer",
   location: "Surat, India",
   email: "keyurpumbhadiya65@gmail.com",
   phone: "+91 9586870368",
@@ -38,15 +38,16 @@ export const profile = {
   resume: "assets/Keyur_Pumbhadiya_Resume.pdf",
   tagline: "Angular front, .NET and Node back.",
   lede:
-    "4+ years building enterprise web applications in Angular and TypeScript, backed by REST APIs in ASP.NET Core and Node.js. Currently delivering a healthcare SaaS platform end to end — from the Angular monorepo down to the MongoDB aggregation pipelines.",
+    "4+ years building enterprise web applications in Angular and TypeScript, backed by REST APIs in ASP.NET Core and Node.js. Currently delivering a healthcare SaaS platform end to end — from the Angular monorepo down to the MongoDB aggregation pipelines — and going deeper into distributed systems and agentic AI.",
   statement:
-    "Owning a feature means owning it everywhere: the component, the endpoint, the query plan behind it, and the production bug three weeks later. That is the part of full stack I actually care about.",
+    "Owning a feature means owning it everywhere: the component, the endpoint, the query plan behind it, and the production bug three weeks later. That is the part of the job I actually care about.",
 };
 
 export const eyebrow = [
   { label: "Keyur Pumbhadiya", caption: "Surat, India" },
-  { label: "Full Stack", caption: "Angular · TypeScript · .NET · Node.js" },
-  { label: "Healthcare SaaS", caption: "Hospital Management System at Lifemaan" },
+  { label: "Software Engineer", caption: "Angular · TypeScript · .NET · Node.js" },
+  { label: "Distributed systems", caption: "Real-time services, WebSockets, API design" },
+  { label: "AI learner", caption: "Agentic AI · RAG · Vector DBs", gradient: true },
 ];
 
 export const pillars = [
@@ -68,16 +69,28 @@ export const pillars = [
     body: "SQL Server stored procedures and MongoDB schema design with Mongoose — indexing and aggregation pipelines for reporting-heavy screens. Most of my performance wins came from fixing the query and cutting redundant API calls, not from adding cache.",
     chips: ["SQL Server", "Stored procedures", "MongoDB", "Mongoose", "Aggregation", "Indexing"],
   },
+  {
+    id: "distributed",
+    title: "Distributed systems",
+    body: "Services that have to agree with each other while data keeps moving. WebSocket channels pushing live state to clients, APIs split by responsibility behind consistent contracts, and the unglamorous part — tracing a defect from the UI through the API into the data layer until the whole path is verified.",
+    chips: ["WebSockets", "Real-time sync", "REST contracts", "Caching", "Production debugging"],
+  },
+  {
+    id: "ai",
+    title: "Agentic AI",
+    body: "The area I am actively going deeper into: the engineering behind agentic systems rather than demos. RAG pipelines that ground model output in real application data through a vector database, tool and prompt design that keeps an agent inside its lane, and a human approval step in front of anything that writes.",
+    chips: ["Agentic AI", "RAG", "Vector DBs", "Claude", "Prompt design", "LLM integration"],
+  },
 ];
 
 export const projects: Project[] = [
   {
     id: "bookstore",
     title: "Online Bookstore",
-    tagline: "A full-stack store on ASP.NET Core Web API with an Angular front end.",
+    tagline: "An end-to-end store on ASP.NET Core Web API with an Angular front end.",
     description:
       "Browsing, search and order management over an ASP.NET Core Web API (.NET 6) backend. JWT-based auth issues signed tokens on login and validates them through authentication middleware to protect endpoints; routes are secured by user role, with an Angular HTTP interceptor handling token storage and attachment on the client. The API is structured around built-in dependency injection — services and repositories registered so controllers stay thin and testable — with LINQ queries shaping data out of SQL Server and every endpoint documented and tested in Swagger.",
-    badges: ["Full stack", "Personal project"],
+    badges: ["End to end", "Personal project"],
     stack: [".NET 6", "C#", "LINQ", "SQL Server", "Angular", "JWT", "Swagger"],
     frameLabel: "bookstore · localhost",
   },
@@ -96,12 +109,12 @@ export const projects: Project[] = [
 export const jobs: Job[] = [
   {
     company: "Lifemaan",
-    role: "Full Stack Developer · Hospital Management System (SaaS)",
+    role: "Software Engineer · Hospital Management System (SaaS)",
     period: "Aug 2025 — Present",
     location: "Surat, India",
     logo: "assets/logo-lifemaan.png",
     points: [
-      "Build a healthcare SaaS Hospital Management System end to end across an Angular front end and a Node.js/Express REST API, having moved from front end into full stack ownership.",
+      "Build a healthcare SaaS Hospital Management System end to end across an Angular front end and a Node.js/Express REST API, having moved from front end into end-to-end ownership.",
       "Designed and implemented REST APIs in Node and Express covering request validation, authentication, error handling and consistent response contracts.",
       "Modelled and maintained MongoDB collections with Mongoose — schema design, indexing and aggregation pipelines for reporting-heavy screens.",
       "Built a role-based permission module with token-based authentication, enforcing permission-driven access across both the UI and the API.",
@@ -205,6 +218,18 @@ export const skillGroups = [
     ],
   },
   {
+    id: "ai",
+    title: "AI engineering",
+    items: [
+      "Agentic AI",
+      "RAG",
+      "Vector databases",
+      "Claude",
+      "Prompt design",
+      "LLM API integration",
+    ],
+  },
+  {
     id: "tools",
     title: "Developer tools",
     items: [
@@ -216,8 +241,6 @@ export const skillGroups = [
       "Postman",
       "Swagger",
       "Playwright",
-      "Cursor",
-      "Claude",
     ],
   },
 ];
@@ -237,8 +260,10 @@ export const marquee = [
   "JWT",
   "WebSockets",
   "Swagger",
+  "Agentic AI",
+  "RAG",
+  "Vector DBs",
   "SCSS",
-  "Bootstrap",
   "Playwright",
   "Git",
 ];

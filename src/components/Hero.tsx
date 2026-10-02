@@ -35,7 +35,10 @@ export function Hero() {
           {eyebrow.map((item, index) => (
             <span key={item.label}>
               {index > 0 && <i aria-hidden="true">·</i>}
-              <span className={styles.eb} title={item.caption}>
+              <span
+                className={`${styles.eb} ${"gradient" in item && item.gradient ? "grad" : ""}`}
+                title={item.caption}
+              >
                 {item.label}
               </span>
             </span>
