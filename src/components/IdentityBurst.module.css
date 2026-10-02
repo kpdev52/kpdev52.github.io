@@ -196,62 +196,40 @@
   }
 }
 
-/* On phones the ring stops being readable, so the burst becomes a stack:
-   portrait, name, then the labels flowing as chips. */
+/* Phones keep the ring — it just shrinks, the pills wrap to two lines and
+   the name block drops below the circle so nothing collides. */
 @media (max-width: 600px) {
   .stage {
-    width: min(92vw, 420px);
-    aspect-ratio: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    gap: 10px;
-    padding-block: 20px;
+    --scale: 0.84;
+    width: min(96vw, 60vh);
   }
 
-  .lines {
-    display: none;
-  }
-
-  .photoWrap,
-  .identity {
-    position: static;
-    transform: none;
-  }
-
-  /* square stays square: no flex-basis on the photo, only on the name block */
+  /* smaller portrait + wider ring, so no pill lands on the photo */
   .photoWrap {
-    flex: 0 0 auto;
-    width: 168px;
-    height: 168px;
-    order: 1;
-  }
-
-  .identity {
-    flex: 0 0 100%;
-    width: auto;
-  }
-
-  .burst[data-open] .photoWrap {
-    transform: none;
-  }
-
-  .identity {
-    order: 2;
-    margin-bottom: 10px;
+    width: 29%;
   }
 
   .pill {
-    position: static;
-    order: 3;
-    transform: translateY(6px);
-    font-size: 0.78rem;
-    padding: 8px 13px;
+    max-width: 92px;
+    padding: 5px 8px;
+    font-size: 0.55rem;
+    line-height: 1.3;
+    white-space: normal;
+    text-align: center;
   }
 
-  .burst[data-open] .pill {
-    transform: none;
+  .identity {
+    top: auto;
+    bottom: -16%;
+    width: 86%;
+  }
+
+  .name {
+    font-size: 1.15rem;
+  }
+
+  .role {
+    font-size: 0.82rem;
   }
 
   .close {
@@ -262,8 +240,17 @@
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .ringDashed {
-    animation: none;
+@media (max-width: 380px) {
+  .stage {
+    --scale: 0.82;
+  }
+
+  .photoWrap {
+    width: 27%;
+  }
+
+  .pill {
+    max-width: 82px;
+    font-size: 0.52rem;
   }
 }

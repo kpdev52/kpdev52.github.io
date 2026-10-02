@@ -163,8 +163,40 @@
 }
 
 @media (max-width: 860px) {
+  .inner {
+    padding: 12px 16px;
+    gap: 10px;
+  }
+
   .name {
     display: none;
+  }
+
+  .right {
+    gap: 8px;
+  }
+
+  .mark {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    font-size: 0.78rem;
+  }
+
+  .toggle,
+  .burger {
+    width: 34px;
+    height: 34px;
+  }
+
+  .toggle svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .cta {
+    padding: 8px 15px;
+    font-size: 0.82rem;
   }
 
   .burger {
