@@ -29,7 +29,7 @@ export const profile = {
   role: "Software Engineer",
   location: "Surat, India",
   email: "keyurpumbhadiya65@gmail.com",
-  phone: "+91 9586870368",
+  /* The number is never rendered as text, only used by the tel: link. */
   phoneHref: "tel:+919586870368",
   whatsapp:
     "https://wa.me/919586870368?text=Hi%20Keyur%2C%20I%20came%20across%20your%20portfolio",
