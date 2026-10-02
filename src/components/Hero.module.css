@@ -71,8 +71,8 @@
 
 .avatarWrap {
   position: relative;
-  width: 132px;
-  height: 132px;
+  width: 160px;
+  height: 160px;
   margin-bottom: 36px;
   padding: 0;
   border: 0;
@@ -265,8 +265,8 @@
   }
 
   .avatarWrap {
-    width: 104px;
-    height: 104px;
+    width: 136px;
+    height: 136px;
     margin-bottom: 30px;
   }
 

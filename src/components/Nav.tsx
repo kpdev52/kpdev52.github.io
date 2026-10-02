@@ -13,7 +13,6 @@ const SECTION_IDS = navLinks.map((link) => link.id);
 
 export function Nav({ theme, onToggleTheme }: NavProps) {
   const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
   const active = useActiveSection(SECTION_IDS);
 
   useEffect(() => {
@@ -23,13 +22,6 @@ export function Nav({ theme, onToggleTheme }: NavProps) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => {
-    document.body.style.overflow = menuOpen ? "hidden" : "";
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [menuOpen]);
-
   return (
     <header className={`${styles.nav} ${scrolled ? styles.scrolled : ""}`}>
       <div className={styles.inner}>
@@ -38,17 +30,13 @@ export function Nav({ theme, onToggleTheme }: NavProps) {
           <span className={styles.name}>{profile.name}</span>
         </a>
 
-        <nav
-          className={`${styles.links} ${menuOpen ? styles.open : ""}`}
-          aria-label="Primary"
-        >
+        <nav className={styles.links} aria-label="Primary">
           {navLinks.map((link) => (
             <a
               key={link.id}
               href={`#${link.id}`}
               className={active === link.id ? styles.active : undefined}
               aria-current={active === link.id ? "true" : undefined}
-              onClick={() => setMenuOpen(false)}
             >
               {link.label}
             </a>
@@ -76,15 +64,6 @@ export function Nav({ theme, onToggleTheme }: NavProps) {
             Resume
           </a>
 
-          <button
-            type="button"
-            className={styles.burger}
-            aria-label={menuOpen ? "Close menu" : "Open menu"}
-            aria-expanded={menuOpen}
-            onClick={() => setMenuOpen((open) => !open)}
-          >
-            <span className={menuOpen ? styles.burgerOpen : undefined} />
-          </button>
         </div>
       </div>
     </header>

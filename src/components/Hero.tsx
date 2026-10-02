@@ -30,8 +30,8 @@ export function Hero() {
               className={styles.avatar}
               src="assets/profile.jpg"
               alt={`Portrait of ${profile.name}`}
-              width={132}
-              height={132}
+              width={160}
+              height={160}
               onError={() => setHasPhoto(false)}
             />
           ) : (
