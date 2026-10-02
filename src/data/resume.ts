@@ -37,6 +37,11 @@ export const profile = {
   github: "https://github.com/kpdev52",
   resume: "assets/Keyur_Pumbhadiya_Resume.pdf",
   tagline: "Angular front, .NET and Node back.",
+  /* Hero headline: each line is plain text plus the gradient-highlighted phrase. */
+  headline: [
+    { lead: "I build systems that", accent: "stay up" },
+    { lead: "and agents that", accent: "get things done." },
+  ],
   lede:
     "4+ years building enterprise web applications in Angular and TypeScript, backed by REST APIs in ASP.NET Core and Node.js. Currently delivering a healthcare SaaS platform end to end — from the Angular monorepo down to the MongoDB aggregation pipelines — and going deeper into distributed systems and agentic AI.",
   statement:

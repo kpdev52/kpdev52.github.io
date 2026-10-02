@@ -50,10 +50,12 @@ export function Hero() {
         </p>
 
         <h1 className={styles.title} data-hero>
-          {/* nbsp keeps the dash tied to "stack" so it never orphans onto its own line */}
-          I build the <span className="grad">whole stack</span>&nbsp;—{" "}
-          <br className={styles.brDesk} />
-          <span className="serif">Angular front, .NET and Node back.</span>
+          {profile.headline.map((line, index) => (
+            <span key={line.accent}>
+              {index > 0 && <br className={styles.brDesk} />}
+              {line.lead} <span className="grad">{line.accent}</span>{" "}
+            </span>
+          ))}
         </h1>
 
         <p className={styles.lede} data-hero>

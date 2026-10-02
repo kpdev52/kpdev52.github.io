@@ -149,8 +149,8 @@
 }
 
 .title {
-  font-size: clamp(2.1rem, 5.6vw, 3.9rem);
-  max-width: 20ch;
+  font-size: clamp(2.1rem, 5.6vw, 4rem);
+  max-width: 24ch;
   margin-bottom: 26px;
   text-wrap: balance;
 }
@@ -213,7 +213,7 @@
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 760px) {
   .brDesk {
     display: block;
   }
