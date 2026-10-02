@@ -152,4 +152,10 @@
   .links {
     display: none;
   }
+
+  /* the hidden links used to provide the auto margins, so push the
+     controls to the right edge explicitly */
+  .right {
+    margin-left: auto;
+  }
 }
